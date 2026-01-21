@@ -2,13 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Users, BookOpen, Trophy, GraduationCap, 
-  ArrowRight, Video, Calendar, MapPin, 
-  ChevronRight, Star, Bell 
+  ArrowRight, Video, Bell, ChevronRight, Star 
 } from 'lucide-react';
 
 const Home = () => {
   return (
-    <div className="font-sans text-gray-800">
+    <div className="font-sans text-gray-800 bg-white">
       
       {/* 1. HERO SECTION */}
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -17,9 +16,8 @@ const Home = () => {
           <img 
             src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" 
             alt="Campus" 
-            className="w-full h-full object-cover transform scale-105 animate-slow-zoom"
+            className="w-full h-full object-cover animate-slow-zoom"
           />
-          {/* Modern Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-blue-900/80 to-slate-900/60"></div>
         </div>
 
@@ -60,7 +58,7 @@ const Home = () => {
 
       {/* 2. NEWS TICKER */}
       <div className="bg-blue-900 border-b border-blue-800 text-white overflow-hidden flex items-center h-14 relative z-20">
-        <div className="bg-blue-800 px-6 h-full flex items-center font-bold text-sm uppercase tracking-wider z-10 shadow-[4px_0_10px_rgba(0,0,0,0.3)]">
+        <div className="bg-blue-800 px-6 h-full flex items-center font-bold text-sm uppercase tracking-wider z-10 shadow-lg">
           <Bell className="w-4 h-4 mr-2 text-yellow-400" /> <span className="hidden sm:inline">Latest Updates</span>
         </div>
         <div className="flex-1 overflow-hidden relative">
@@ -68,6 +66,8 @@ const Home = () => {
             <span className="mx-8 flex items-center text-sm font-medium"><div className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-2"></div> Admission Forms for B.Sc. Part I are now available online.</span>
             <span className="mx-8 flex items-center text-sm font-medium"><div className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-2"></div> Annual Sports Day scheduled for Feb 20th.</span>
             <span className="mx-8 flex items-center text-sm font-medium"><div className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-2"></div> Result declared for M.A. Semester III Examination.</span>
+            {/* Duplicate content for seamless loop */}
+            <span className="mx-8 flex items-center text-sm font-medium"><div className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-2"></div> Admission Forms for B.Sc. Part I are now available online.</span>
           </div>
         </div>
       </div>
@@ -100,7 +100,7 @@ const Home = () => {
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 rounded-full z-0 group-hover:scale-125 transition-transform duration-500"></div>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-yellow-100 rounded-full z-0 group-hover:scale-125 transition-transform duration-500"></div>
               <img 
-                src="WhatsApp Image 2026-01-20 at 3.09.36 PM.jpeg" 
+                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=80" 
                 alt="Library" 
                 className="relative z-10 rounded-3xl shadow-2xl w-full object-cover h-[500px] transform transition-transform duration-500 hover:scale-[1.02]"
               />
@@ -185,7 +185,6 @@ const Home = () => {
                     alt={course.title} 
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" 
                   />
-                  {/* Floating badge */}
                   <div className="absolute bottom-4 left-4 z-20 bg-white/90 backdrop-blur text-blue-900 text-xs font-bold px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                     View Programs
                   </div>

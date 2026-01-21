@@ -72,15 +72,17 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Google Map Embed (Placeholder) */}
-          <div className="bg-gray-200 h-64 rounded-xl overflow-hidden shadow-inner">
+          {/* Google Map Embed (Fixed) */}
+          <div className="bg-gray-200 h-80 rounded-xl overflow-hidden shadow-lg border border-gray-200">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.2872346743916!2d84.99676767538397!3d24.78657697798356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f32a6111111111%3A0x1111111111111111!2sGaya%2C%20Bihar!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              title="Anugrah Memorial College Location Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.535783350171!2d84.99623697597116!3d24.74317924992523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f32a6eb6404285%3A0x6b45a669146193e6!2sAnugrah%20Memorial%20College%20Gaya!5e0!3m2!1sen!2sin!4v1715000000000!5m2!1sen!2sin" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
               allowFullScreen="" 
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </div>
@@ -96,7 +98,7 @@ const Contact = () => {
               <input 
                 type="text" 
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-shadow"
                 value={formData.name}
                 onChange={(e) => setFormData({...formData, name: e.target.value})}
               />
@@ -107,7 +109,7 @@ const Contact = () => {
               <input 
                 type="email" 
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-shadow"
                 value={formData.email}
                 onChange={(e) => setFormData({...formData, email: e.target.value})}
               />
@@ -118,7 +120,7 @@ const Contact = () => {
               <textarea 
                 rows="4"
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-shadow"
                 value={formData.message}
                 onChange={(e) => setFormData({...formData, message: e.target.value})}
               ></textarea>
@@ -126,7 +128,7 @@ const Contact = () => {
 
             <button 
               type="submit" 
-              className="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition flex justify-center items-center"
+              className="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5 transition-all flex justify-center items-center"
             >
               <Send className="h-5 w-5 mr-2" /> Send Message
             </button>

@@ -12,25 +12,23 @@ const VirtualTour = () => {
   ];
 
   return (
-    <div className="pt-20 min-h-screen bg-black text-white pb-16">
+    <div className="pt-20 min-h-screen bg-slate-900 text-white pb-16">
       
       {/* 1. Video Header */}
-      <div className="max-w-7xl mx-auto px-4 text-center mb-16">
+      <div className="max-w-7xl mx-auto px-4 text-center mb-16 pt-10">
         <h1 className="text-4xl font-bold mb-4 flex justify-center items-center">
           <Camera className="mr-3 text-blue-500" /> Virtual Campus Tour
         </h1>
         <p className="text-gray-400 mb-8">Experience life at Anugrah Memorial College from anywhere in the world.</p>
         
-        {/* Placeholder Video Embed */}
-        <div className="relative aspect-video w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
-          <iframe 
-            className="w-full h-full"
-            src="WhatsApp Video 2026-01-20 at 3.45.02 PM.mp4" // Replace with actual college video
-            title="Campus Tour"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+        {/* Responsive Video Container */}
+        <div className="relative aspect-video w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-800 bg-gray-800 flex items-center justify-center group">
+          {/* Note: In a real app, replace the src below with a valid YouTube embed link or local file path */}
+          <div className="text-center p-10">
+            <PlayCircle className="w-20 h-20 text-blue-500 mx-auto mb-4 opacity-50 group-hover:opacity-100 transition-opacity" />
+            <p className="text-gray-400">Campus Video Tour</p>
+            <p className="text-xs text-gray-500 mt-2">(Upload 'campus-tour.mp4' to public folder to view)</p>
+          </div>
         </div>
       </div>
 
@@ -42,16 +40,16 @@ const VirtualTour = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {campusSpots.map((spot, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-xl cursor-pointer">
+            <div key={index} className="group relative overflow-hidden rounded-xl cursor-pointer shadow-lg hover:shadow-blue-500/20 transition-all duration-300">
               <img 
                 src={spot.img} 
                 alt={spot.title} 
-                className="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500 ease-in-out"
+                className="w-full h-64 object-cover transform group-hover:scale-110 transition duration-700 ease-in-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end p-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex items-end p-6">
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-1">{spot.title}</h3>
-                  <span className="text-sm text-blue-400 flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <h3 className="text-xl font-bold text-white mb-1 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">{spot.title}</h3>
+                  <span className="text-sm text-blue-400 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <PlayCircle className="w-4 h-4 mr-1" /> View 360°
                   </span>
                 </div>
