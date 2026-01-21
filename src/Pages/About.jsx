@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { History, Target, Eye, User, BookOpen, Star, TrendingUp, Users, Calendar, ChevronRight } from 'lucide-react';
+import { Target, Eye, BookOpen, Star, TrendingUp, Users, Calendar, ChevronRight } from 'lucide-react';
 
 const About = () => {
   const milestones = [
