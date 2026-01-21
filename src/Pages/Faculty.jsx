@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, Search, User, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, Search, Linkedin } from 'lucide-react';
 
 // 1. MOCK DATA
 const facultyMembers = [
