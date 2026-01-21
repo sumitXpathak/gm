@@ -7,7 +7,7 @@ import {
 
 const Home = () => {
   return (
-    <div className="font-sans text-gray-800 bg-white">
+    <div className="font-sans text-gray-800 dark:text-gray-100 bg-white dark:bg-slate-900 transition-colors duration-300">
       
       {/* 1. HERO SECTION */}
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -57,8 +57,8 @@ const Home = () => {
       </div>
 
       {/* 2. NEWS TICKER */}
-      <div className="bg-blue-900 border-b border-blue-800 text-white overflow-hidden flex items-center h-14 relative z-20">
-        <div className="bg-blue-800 px-6 h-full flex items-center font-bold text-sm uppercase tracking-wider z-10 shadow-lg">
+      <div className="bg-blue-900 dark:bg-blue-950 border-b border-blue-800 text-white overflow-hidden flex items-center h-14 relative z-20">
+        <div className="bg-blue-800 dark:bg-blue-900 px-6 h-full flex items-center font-bold text-sm uppercase tracking-wider z-10 shadow-lg">
           <Bell className="w-4 h-4 mr-2 text-yellow-400" /> <span className="hidden sm:inline">Latest Updates</span>
         </div>
         <div className="flex-1 overflow-hidden relative">
@@ -73,7 +73,7 @@ const Home = () => {
       </div>
 
       {/* 3. FLOATING STATS */}
-      <div className="py-20 bg-gray-50 relative">
+      <div className="py-20 bg-gray-50 dark:bg-slate-800 relative transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative -mt-32 z-30">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
@@ -82,12 +82,12 @@ const Home = () => {
               { icon: Trophy, count: "A Grade", label: "NAAC Accredited" },
               { icon: GraduationCap, count: "60 Yrs", label: "Educational Legacy" }
             ].map((stat, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 text-center hover:-translate-y-2 transition-all duration-300 group hover:shadow-blue-200/50 hover:border-blue-100">
-                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 group-hover:rotate-6 transition-all duration-300">
-                  <stat.icon className="h-8 w-8 text-blue-600 group-hover:text-white transition-colors duration-300" />
+              <div key={idx} className="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-black/30 border border-gray-100 dark:border-slate-700 text-center hover:-translate-y-2 transition-all duration-300 group hover:shadow-blue-200/50 dark:hover:shadow-blue-900/20 hover:border-blue-100 dark:hover:border-blue-900">
+                <div className="w-16 h-16 bg-blue-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 group-hover:rotate-6 transition-all duration-300">
+                  <stat.icon className="h-8 w-8 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h3 className="text-4xl font-extrabold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{stat.count}</h3>
-                <p className="text-gray-500 font-bold text-xs uppercase tracking-widest">{stat.label}</p>
+                <h3 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{stat.count}</h3>
+                <p className="text-gray-500 dark:text-gray-400 font-bold text-xs uppercase tracking-widest">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -97,30 +97,30 @@ const Home = () => {
         <div className="mt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative group">
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 rounded-full z-0 group-hover:scale-125 transition-transform duration-500"></div>
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-yellow-100 rounded-full z-0 group-hover:scale-125 transition-transform duration-500"></div>
+              <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 dark:bg-blue-900/30 rounded-full z-0 group-hover:scale-125 transition-transform duration-500"></div>
+              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-yellow-100 dark:bg-yellow-900/30 rounded-full z-0 group-hover:scale-125 transition-transform duration-500"></div>
               <img 
                 src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=80" 
                 alt="Library" 
                 className="relative z-10 rounded-3xl shadow-2xl w-full object-cover h-[500px] transform transition-transform duration-500 hover:scale-[1.02]"
               />
-              <div className="absolute bottom-8 right-8 z-20 bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-lg max-w-xs border border-white/50 animate-fade-in-up">
+              <div className="absolute bottom-8 right-8 z-20 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-6 rounded-2xl shadow-lg max-w-xs border border-white/50 dark:border-slate-700 animate-fade-in-up">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 bg-yellow-100 rounded-full">
-                    <Star className="w-5 h-5 text-yellow-600" fill="currentColor" />
+                  <div className="p-2 bg-yellow-100 dark:bg-yellow-900/50 rounded-full">
+                    <Star className="w-5 h-5 text-yellow-600 dark:text-yellow-400" fill="currentColor" />
                   </div>
-                  <span className="font-bold text-gray-800">Top Ranked</span>
+                  <span className="font-bold text-gray-800 dark:text-white">Top Ranked</span>
                 </div>
-                <p className="text-sm text-gray-600 leading-snug">Consistently ranked among the best constituent colleges in Magadh University.</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300 leading-snug">Consistently ranked among the best constituent colleges in Magadh University.</p>
               </div>
             </div>
             
             <div>
-              <span className="text-blue-600 font-bold uppercase tracking-wider text-sm">Why Anugrah Memorial</span>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mt-2 mb-6 leading-tight">
+              <span className="text-blue-600 dark:text-blue-400 font-bold uppercase tracking-wider text-sm">Why Anugrah Memorial</span>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mt-2 mb-6 leading-tight">
                 Innovation meets <br/>Traditional Values
               </h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
                 Located in the historic city of Gaya, our campus blends modern infrastructure with a serene learning environment. We focus on holistic development beyond textbooks.
               </p>
               
@@ -130,15 +130,15 @@ const Home = () => {
                   { title: "Modern Labs", desc: "State-of-the-art computer and science laboratories." },
                   { title: "Placement Cell", desc: "Dedicated career guidance and recruitment drives." }
                 ].map((item, i) => (
-                  <div key={i} className="flex gap-4 p-4 rounded-xl hover:bg-white hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 border border-transparent hover:border-gray-100">
+                  <div key={i} className="flex gap-4 p-4 rounded-xl hover:bg-white dark:hover:bg-slate-700 hover:shadow-lg hover:shadow-gray-200/50 dark:hover:shadow-black/20 transition-all duration-300 border border-transparent hover:border-gray-100 dark:hover:border-slate-600">
                     <div className="mt-1">
-                      <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                      <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400">
                          <ChevronRight className="w-5 h-5" />
                       </div>
                     </div>
                     <div>
-                      <h5 className="font-bold text-gray-900 text-lg">{item.title}</h5>
-                      <p className="text-gray-500">{item.desc}</p>
+                      <h5 className="font-bold text-gray-900 dark:text-white text-lg">{item.title}</h5>
+                      <p className="text-gray-500 dark:text-gray-400">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -149,12 +149,12 @@ const Home = () => {
       </div>
 
       {/* 5. ACADEMIC DEPARTMENTS */}
-      <div className="py-24 bg-white">
+      <div className="py-24 bg-white dark:bg-slate-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Academic Pillars</h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full mb-6"></div>
-            <p className="text-gray-600 text-lg">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Academic Pillars</h2>
+            <div className="w-20 h-1 bg-blue-600 dark:bg-blue-500 mx-auto rounded-full mb-6"></div>
+            <p className="text-gray-600 dark:text-gray-300 text-lg">
               Explore our diverse range of undergraduate and postgraduate programs designed to build careers.
             </p>
           </div>
@@ -177,7 +177,7 @@ const Home = () => {
                 tags: ["Accounts", "Business", "Management"]
               }
             ].map((course, index) => (
-              <div key={index} className="group bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500">
+              <div key={index} className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg overflow-hidden border border-gray-100 dark:border-slate-700 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-900/20 transition-all duration-500">
                 <div className="relative h-64 overflow-hidden">
                   <div className="absolute inset-0 bg-blue-900/20 group-hover:bg-blue-900/0 transition-colors z-10 duration-500"></div>
                   <img 
@@ -185,24 +185,24 @@ const Home = () => {
                     alt={course.title} 
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" 
                   />
-                  <div className="absolute bottom-4 left-4 z-20 bg-white/90 backdrop-blur text-blue-900 text-xs font-bold px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                  <div className="absolute bottom-4 left-4 z-20 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-blue-900 dark:text-blue-100 text-xs font-bold px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                     View Programs
                   </div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {course.title}
                   </h3>
                   
                   <div className="flex flex-wrap gap-2 mb-6">
                     {course.tags.map((tag, t) => (
-                      <span key={t} className="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-bold uppercase rounded-md">
+                      <span key={t} className="px-3 py-1 bg-blue-50 dark:bg-slate-700 text-blue-700 dark:text-blue-300 text-xs font-bold uppercase rounded-md">
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <Link to="/academics" className="inline-flex items-center text-gray-900 font-bold hover:text-blue-600 transition-colors group/link">
+                  <Link to="/academics" className="inline-flex items-center text-gray-900 dark:text-gray-200 font-bold hover:text-blue-600 dark:hover:text-blue-400 transition-colors group/link">
                     Explore Department <ArrowRight className="ml-2 h-4 w-4 transform group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -213,9 +213,9 @@ const Home = () => {
       </div>
 
       {/* 6. CTA / ADMISSIONS */}
-      <div className="relative py-24 bg-blue-900 overflow-hidden">
-        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-800 rounded-full opacity-50 blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-cyan-800 rounded-full opacity-50 blur-3xl animate-pulse [animation-delay:1s]"></div>
+      <div className="relative py-24 bg-blue-900 dark:bg-blue-950 overflow-hidden transition-colors duration-300">
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-800 dark:bg-blue-900 rounded-full opacity-50 blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-cyan-800 dark:bg-cyan-900 rounded-full opacity-50 blur-3xl animate-pulse [animation-delay:1s]"></div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <GraduationCap className="w-20 h-20 text-blue-300 mx-auto mb-6" />

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, Search, Linkedin } from 'lucide-react';
 
-// 1. MOCK DATA
+// 1. MOCK DATA - Using data URLs (completely offline, no internet needed)
 const facultyMembers = [
   {
     id: 1,
@@ -9,7 +9,7 @@ const facultyMembers = [
     designation: "Principal",
     department: "Administration",
     email: "principal@amcollege.ac.in",
-    image: "1755320413Prof.(Dr. ) Md.  Nazir Akhtar.png", 
+    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%231e40af' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='60' fill='white' font-weight='bold'%3ENA%3C/text%3E%3C/svg%3E",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const facultyMembers = [
     designation: "Assistant Professor",
     department: "Science",
     email: "anjali.v@amcollege.ac.in",
-    image: "1616078820MALAY.jpeg",
+    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%23059669' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='60' fill='white' font-weight='bold'%3EMK%3C/text%3E%3C/svg%3E",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const facultyMembers = [
     designation: "Associate Professor",
     department: "Commerce",
     email: "vikram.s@amcollege.ac.in",
-    image: "WhatsApp Image 2026-01-19 at 9.06.29 PM.jpeg",
+    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%23dc2626' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='60' fill='white' font-weight='bold'%3EGK%3C/text%3E%3C/svg%3E",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const facultyMembers = [
     designation: "Professor, English",
     department: "Arts",
     email: "kavita.d@amcollege.ac.in",
-    image: "image.png",
+    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%237c3aed' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='60' fill='white' font-weight='bold'%3EPK%3C/text%3E%3C/svg%3E",
   },
   {
     id: 5,
@@ -41,7 +41,7 @@ const facultyMembers = [
     designation: "Lab Instructor",
     department: "Science",
     email: "amit.k@amcollege.ac.in",
-    image: "WhatsApp Image 2026-01-19 at 9.13.39 PM.jpeg",
+    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%23ea580c' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='60' fill='white' font-weight='bold'%3ENK%3C/text%3E%3C/svg%3E",
   },
 ];
 
@@ -106,7 +106,6 @@ const Faculty = () => {
           {filteredFaculty.map((member) => (
             <div 
               key={member.id} 
-              // UPDATED: Added 'group', hover:-translate-y-2, and hover:border-blue-300
               className="group bg-white rounded-2xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 hover:border-blue-300 overflow-hidden relative"
             >
               {/* Decorative Top Gradient Line */}
@@ -119,7 +118,6 @@ const Faculty = () => {
                       src={member.image} 
                       alt={member.name}
                       onError={(e) => {e.target.src='https://via.placeholder.com/150'}} 
-                      // UPDATED: Added scale transform on hover
                       className="relative w-32 h-32 rounded-full object-cover border-4 border-gray-50 group-hover:border-blue-100 group-hover:scale-105 transition-all duration-500 shadow-md"
                     />
                 </div>
@@ -146,7 +144,6 @@ const Faculty = () => {
                   >
                     <Phone className="h-5 w-5" />
                   </button>
-                  {/* Added Extra Social Icons for looks */}
                   <button className="p-2 text-gray-400 hover:text-blue-700 hover:bg-blue-50 rounded-full transition-colors">
                     <Linkedin className="h-5 w-5" />
                   </button>

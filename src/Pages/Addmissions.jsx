@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { 
   CheckCircle, Calendar, FileText, AlertCircle, 
   User, Mail, Phone, BookOpen, Percent, Send, 
-  ArrowRight, ShieldCheck, Clock 
+  ArrowRight, ShieldCheck
 } from 'lucide-react';
 
 const Admissions = () => {
