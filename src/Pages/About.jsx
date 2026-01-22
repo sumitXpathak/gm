@@ -156,7 +156,7 @@ const About = () => {
                 </div>
                 <div className="p-8 text-center -mt-16 relative z-10">
                     <div className="w-28 h-28 bg-white rounded-full mx-auto flex items-center justify-center shadow-lg border-4 border-white overflow-hidden mb-4">
-                         <img src="1755320413Prof.(Dr. ) Md.  Nazir Akhtar.png" alt="Principal" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"/>
+                         <img src="/principal.png" alt="Principal" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"/>
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900">Md. Nazir Akhtar</h3>
                     <p className="text-blue-600 font-bold text-sm mb-6 uppercase tracking-wide">Principal</p>
