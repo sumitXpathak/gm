@@ -9,7 +9,7 @@ const facultyMembers = [
     designation: "Principal",
     department: "Administration",
     email: "principal@amcollege.ac.in",
-    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%231e40af' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='60' fill='white' font-weight='bold'%3ENA%3C/text%3E%3C/svg%3E",
+    image: "principal.png",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const facultyMembers = [
     designation: "Assistant Professor",
     department: "Science",
     email: "malay.k@amcollege.ac.in", // Fixed email
-    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%23059669' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='60' fill='white' font-weight='bold'%3EMK%3C/text%3E%3C/svg%3E",
+    image: "malay.jpeg",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const facultyMembers = [
     designation: "Associate Professor",
     department: "Commerce",
     email: "gautam.k@amcollege.ac.in", // Fixed email
-    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%23dc2626' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='60' fill='white' font-weight='bold'%3EGK%3C/text%3E%3C/svg%3E",
+    image: "gautam.jpeg",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const facultyMembers = [
     designation: "Professor, English",
     department: "Arts",
     email: "prince.k@amcollege.ac.in", // Fixed email
-    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%237c3aed' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='60' fill='white' font-weight='bold'%3EPK%3C/text%3E%3C/svg%3E",
+    image: "image.png",
   },
   {
     id: 5,
@@ -41,7 +41,7 @@ const facultyMembers = [
     designation: "Lab Instructor",
     department: "Science",
     email: "nidhi.k@amcollege.ac.in", // Fixed email
-    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%23ea580c' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='60' fill='white' font-weight='bold'%3ENK%3C/text%3E%3C/svg%3E",
+    image: "mam.jpeg",
   },
 ];
 
@@ -78,7 +78,7 @@ const Faculty = () => {
       <div className="max-w-7xl mx-auto px-4">
         
         {/* Controls Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-6 mb-12 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+        <div className="flex flex-col lg:flex-row justify-between items-stretch lg:items-center gap-6 mb-12 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
             <div className="relative w-full lg:w-96">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                     <Search className="h-5 w-5 text-gray-400" />
@@ -92,12 +92,12 @@ const Faculty = () => {
                 />
             </div>
 
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className="flex flex-wrap justify-center lg:justify-end gap-2">
             {['All', 'Science', 'Arts', 'Commerce', 'Administration'].map((dept) => (
                 <button
                 key={dept}
                 onClick={() => setFilter(dept)}
-                className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+                className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 whitespace-nowrap ${
                     filter === dept 
                     ? 'bg-blue-600 text-white shadow-md scale-105' 
                     : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200 hover:border-gray-300'
@@ -110,13 +110,13 @@ const Faculty = () => {
         </div>
 
         {/* Faculty Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {filteredFaculty.map((member) => (
             <div 
               key={member.id} 
-              className="group bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 overflow-hidden"
+              className="group bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col h-full"
             >
-              <div className="flex flex-col items-center p-8 text-center relative z-10">
+              <div className="flex flex-col items-center p-8 text-center flex-grow">
                 <div className="relative mb-6">
                     <img 
                       src={member.image} 
